@@ -1,0 +1,29 @@
+# include <stdio.h>
+int main(){
+	while(true){
+	printf("enter no. of rows::");
+	int n; scanf("%d",&n);
+	int sp=n/2; int st=1;
+	for(int i=1;i<=n;i++){
+	  for(int z=1;z<=5;z++){
+	    for(int j=1;j<=sp;j++)
+	    printf(" ");
+	    for(int k=1;k<=st;k++)
+	    printf("*");
+	    for(int j=1;j<=sp;j++)
+	    printf(" ");}
+	    printf("\n");
+	    if(i<n/2+1){ sp-=1; st+=2;}
+	    else if(i>=n/2+1) {sp+=1;st-=2;}
+	    
+	    
+	    
+	    }
+	    
+	
+	
+	
+	
+	
+	}
+}
