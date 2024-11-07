@@ -1,6 +1,6 @@
 # include <stdio.h>
 int main(){
-	while(true){
+	while(1){
 	printf("enter no. of rows::");
 	int n; scanf("%d",&n);
 	int sp=n/2; int st=1;
