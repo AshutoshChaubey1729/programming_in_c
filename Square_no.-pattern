@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){ int q=65;    //to print a number square
+char str[]="enter a number<=17:";
+		while(1){
+	   if(q==65)
+	 printf("%c.%s",q,str);
+	else printf("%c.again %s",q,str);
+	q+=1;
+	int n;
+	scanf("%d",&n);
+	for(int i=1;i<=n;i++){
+	    for(int j=1;j<=n;j++){
+	        int min=0;
+	        int a=i; int b=j;
+	        if(a>(n/2+1))a=n+1-a;
+	        if(b>(n/2+1))b=n+1-b;
+	        if(a<b) min=a;
+	        else min=b;
+	     
+	      min=n/2+2-min;
+	        printf("%d",min);}
+	        printf("\n");}
+	        printf("\n\n");}
+	        
+	        }
+	
+	
+	
+	
