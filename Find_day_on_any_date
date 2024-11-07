@@ -1,0 +1,69 @@
+#include <stdio.h>
+int main()
+{
+    while (true)
+    {
+        int arr[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        char days[] = {'m', 'o', 'n', ' ', 't', 'u', 'e', ' ', 'w', 'e', 'd', ' ', 't', 'h', 'r', ' ', 'f', 'r', 'i', ' ', 's', 'a', 't', ' ', 's', 'u', 'n', ' '};
+
+        int a, date, mon, yr, day = 0;
+        printf("enter date::");
+        scanf("%d", &date);
+        printf("enter month::");
+        scanf("%d", &mon);
+        printf("enter year::");
+        scanf("%d", &yr);
+
+        if (yr % 4 == 0&& yr%100!=0||yr%400==0)
+            arr[1] = 29;
+
+        if (date > arr[mon - 1] || date<1 || mon > 12||mon<1)
+        {
+            printf("you are gendu");
+            break;
+
+            printf("The day on this date is ");
+        }
+
+        if (yr >= 2001)
+        {
+            for (int i = 2001; i <= yr - 1; i++)
+            {
+            if (i % 4 == 0&& i%100!=0||i%400==0)
+                    a = 366;
+                else
+                    a = 365;
+                day += a;
+                day %= 7;
+            }
+            for (int i = 0; i <= mon - 2; i++)
+                day += arr[i];
+            day += date;
+            int rem = day % 7 - 1;
+            for (int i = 4 * rem; i <= 4 * rem + 3; i++)
+                printf("%c", days[i]);
+        }
+
+        else
+        {
+            for (int i = yr + 1; i <= 2000; i++)
+            {
+             if (i % 4 == 0&& i%100!=0||i%400==0)
+                    a = 366;
+                else
+                    a = 365;
+                day += a;
+                day %= 7;
+            }
+            for (int i = 11; i >= mon; i--)
+                day += arr[i];
+            day += arr[mon - 1] - date + 1;
+            int rem = 7 - day % 7;
+            if (rem == 7)
+                rem -= 7;
+            for (int i = 4 * rem; i <= 4 * rem + 3; i++)
+                printf("%c", days[i]);
+        }
+        printf("\n\n");
+    }
+}
